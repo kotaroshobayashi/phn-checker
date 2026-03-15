@@ -404,16 +404,29 @@ export default function App() {
     setAiResult(null);
     try {
       const formData = new FormData();
-      formData.append('file', {
-        uri:  uri,
-        type: 'image/jpeg',
-        name: 'rash.jpg',
-      });
+
+      if (Platform.OS === 'web') {
+        // ブラウザ環境: URI(blob: / data:)を実際のBlobに変換してから送信
+        const imgRes = await fetch(uri);
+        const blob   = await imgRes.blob();
+        formData.append('file', blob, 'rash.jpg');
+      } else {
+        // React Native ネイティブ環境
+        formData.append('file', {
+          uri:  uri,
+          type: 'image/jpeg',
+          name: 'rash.jpg',
+        });
+      }
+
       const res = await fetch(`${AI_API_URL}/predict`, {
-        method:  'POST',
-        body:    formData,
+        method: 'POST',
+        body:   formData,
       });
-      if (!res.ok) throw new Error(`サーバーエラー (${res.status})`);
+      if (!res.ok) {
+        const errText = await res.text().catch(() => '');
+        throw new Error(`サーバーエラー (${res.status})${errText ? ': ' + errText : ''}`);
+      }
       const data = await res.json();
       setAiResult(data);
     } catch (e) {
