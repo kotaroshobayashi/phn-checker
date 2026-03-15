@@ -13,6 +13,15 @@ import {
 } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import * as ImagePicker from 'expo-image-picker';
+import Svg, {
+  Circle,
+  Ellipse,
+  Path,
+  Rect,
+  G,
+  Line,
+  Text as SvgText,
+} from 'react-native-svg';
 
 // ─────────────────────────────────────────────────────────
 // AI API 設定
@@ -33,15 +42,6 @@ const CLASS_LABELS_JA = {
   'VI-chickenpox':              '水痘・水ぼうそう（ウイルス性）',
   'VI-shingles':                '帯状疱疹（ウイルス性）',
 };
-import Svg, {
-  Circle,
-  Ellipse,
-  Path,
-  Rect,
-  G,
-  Line,
-  Text as SvgText,
-} from 'react-native-svg';
 
 // ─────────────────────────────────────────────────────────
 // データ定義
