@@ -26,10 +26,9 @@ import Svg, {
 // ─────────────────────────────────────────────────────────
 // AI API 設定
 // ─────────────────────────────────────────────────────────
+// 本番: https://phn-checker-api.onrender.com
 // ローカル開発: http://localhost:8000
-// Android実機: http://<PCのIPアドレス>:8000
-// iOSシミュレータ: http://localhost:8000
-const AI_API_URL = 'http://localhost:8000';
+const AI_API_URL = 'https://phn-checker-api.onrender.com';
 
 // KapoorPaper モデルの8クラス 日本語ラベル
 const CLASS_LABELS_JA = {
