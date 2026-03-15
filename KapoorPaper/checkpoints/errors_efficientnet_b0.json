@@ -1,0 +1,30 @@
+[
+  {
+    "path": "skin-disease-dataset/test_set/FU-athlete-foot/FU-athlete-foot (29).jpg",
+    "true_class": "FU-athlete-foot",
+    "pred_class": "FU-nail-fungus",
+    "true_idx": 2,
+    "pred_idx": 3
+  },
+  {
+    "path": "skin-disease-dataset/test_set/FU-nail-fungus/_31_2446.jpg",
+    "true_class": "FU-nail-fungus",
+    "pred_class": "FU-ringworm",
+    "true_idx": 3,
+    "pred_idx": 4
+  },
+  {
+    "path": "skin-disease-dataset/test_set/FU-nail-fungus/_33_8330.jpg",
+    "true_class": "FU-nail-fungus",
+    "pred_class": "FU-ringworm",
+    "true_idx": 3,
+    "pred_idx": 4
+  },
+  {
+    "path": "skin-disease-dataset/test_set/PA-cutaneous-larva-migrans/71_PA-cutaneous-larva-migrans (30).jpg",
+    "true_class": "PA-cutaneous-larva-migrans",
+    "pred_class": "FU-athlete-foot",
+    "true_idx": 5,
+    "pred_idx": 2
+  }
+]
