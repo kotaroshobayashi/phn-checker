@@ -1,0 +1,42 @@
+{
+  "expo": {
+    "name": "帯状疱疹Check",
+    "slug": "phn-checker",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "light",
+    "web": {
+      "bundler": "metro",
+      "output": "single"
+    },
+    "ios": {
+      "supportsTablet": false,
+      "bundleIdentifier": "com.phn.checker",
+      "infoPlist": {
+        "NSCameraUsageDescription": "皮疹を撮影するためにカメラを使用します。",
+        "NSPhotoLibraryUsageDescription": "皮疹の写真を選択するためにフォトライブラリにアクセスします。",
+        "NSPhotoLibraryAddUsageDescription": "撮影した写真をライブラリに保存します。"
+      }
+    },
+    "android": {
+      "package": "com.phn.checker",
+      "adaptiveIcon": {
+        "backgroundColor": "#2563eb"
+      },
+      "permissions": [
+        "android.permission.CAMERA",
+        "android.permission.READ_MEDIA_IMAGES",
+        "android.permission.READ_EXTERNAL_STORAGE"
+      ]
+    },
+    "plugins": [
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "皮疹の写真を選択するためにフォトライブラリにアクセスします。",
+          "cameraPermission": "皮疹を撮影するためにカメラを使用します。"
+        }
+      ]
+    ]
+  }
+}
