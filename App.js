@@ -10,6 +10,7 @@ import {
   Alert,
   Image,
   Platform,
+  ActivityIndicator,
 } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import * as ImagePicker from 'expo-image-picker';
@@ -702,15 +703,32 @@ export default function App() {
                   resizeMode="contain"
                 />
 
-                {/* ── AI 解析結果 ── */}
+                {/* ── AI 解析中 オーバーレイカード ── */}
                 {aiLoading && (
-                  <View style={{ backgroundColor: '#eff6ff', borderRadius: 12, padding: 14, borderWidth: 1, borderColor: '#bfdbfe', alignItems: 'center' }}>
-                    <Text style={{ color: '#2563eb', fontWeight: '700', fontSize: 14 }}>
-                      🤖 AI が皮膚疾患を解析中...
+                  <View style={{
+                    backgroundColor: '#1e3a8a',
+                    borderRadius: 16,
+                    padding: 24,
+                    alignItems: 'center',
+                    gap: 12,
+                    shadowColor: '#000',
+                    shadowOffset: { width: 0, height: 4 },
+                    shadowOpacity: 0.25,
+                    shadowRadius: 8,
+                    elevation: 6,
+                  }}>
+                    <ActivityIndicator size="large" color="#60a5fa" />
+                    <Text style={{ color: '#ffffff', fontWeight: '800', fontSize: 18, letterSpacing: 0.5 }}>
+                      🤖 AI 診断中...
                     </Text>
-                    <Text style={{ color: '#3b82f6', fontSize: 12, marginTop: 4 }}>
-                      EfficientNetB0 モデルで分類しています
+                    <Text style={{ color: '#93c5fd', fontSize: 13, textAlign: 'center' }}>
+                      画像をサーバーに送信して{'\n'}帯状疱疹の可能性を解析しています
                     </Text>
+                    <View style={{ backgroundColor: '#1e40af', borderRadius: 8, paddingHorizontal: 12, paddingVertical: 6 }}>
+                      <Text style={{ color: '#bfdbfe', fontSize: 11 }}>
+                        EfficientNetB0 モデル（精度 98%）
+                      </Text>
+                    </View>
                   </View>
                 )}
 
